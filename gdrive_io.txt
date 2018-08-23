@@ -47,7 +47,10 @@ def OpenFile(id):
 
 def FileContents(fn):
   g = GetID(name)
-  c = OpenFile(g)
+  if g == None:
+    c = None
+  else:
+    c = OpenFile(g)
   return c
 
 def DeleteFile(existing_id, trash=True):  
