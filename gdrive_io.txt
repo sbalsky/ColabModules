@@ -44,9 +44,10 @@ def OpenFile(id):
   return content
 
 def FileContents(fn):
+  c = None
   g = GetID(fn)
   if g == None:
-    c = None
+    pass
   else:
     c = OpenFile(g)
   return c
