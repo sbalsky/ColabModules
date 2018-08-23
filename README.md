@@ -39,6 +39,9 @@ Available functions:
     
     OpenFile(id)
       - Opens file by ID and returns content
+      
+    FileContents(filename)
+      - Opens file by name and returns content
     
     DriveFileDict()
       - Returns dictionary of all files in Google Drive in format {'title':id)
