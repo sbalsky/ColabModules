@@ -20,11 +20,6 @@ gauth = GoogleAuth()
 gauth.credentials = GoogleCredentials.get_application_default()
 drive = GoogleDrive(gauth)
 
-def OpenFile(id):
-  dl = drive.CreateFile({'id': id})
-  content = dl.GetContentString()
-  return content
-
 def WriteNewFile(fn, txt):
   new = drive.CreateFile({'title': fn})
   new.SetContentString(txt)
@@ -44,6 +39,16 @@ def GetID(name):
   else:
     id_is = None
   return id_is
+
+def OpenFile(id):
+  dl = drive.CreateFile({'id': id})
+  content = dl.GetContentString()
+  return content
+
+def FileContents(fn):
+  g = GetID(name)
+  c = OpenFile(g)
+  return c
 
 def DeleteFile(existing_id, trash=True):  
   del_ext = drive.CreateFile({'id': existing_id})
